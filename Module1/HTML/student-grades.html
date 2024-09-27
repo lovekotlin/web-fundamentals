@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Student Grades</title>
+</head>
+
+<body>
+    <h2> Student Grades </h2>
+    <table border="1">
+        <tr>
+            <th> ID </th>
+            <th> Name </th>
+            <th> Grade </th>
+        </tr>
+
+        <tr>
+            <td> 4 </td>
+            <td> {Student_Name} </td>
+            <td> A+ </td>
+        </tr>
+
+        <tr>
+            <td> 1 </td>
+            <td> {Student_Name} </td>
+            <td> A- </td>
+        </tr>
+
+        <tr>
+            <td> 3 </td>
+            <td> {Student_Name} </td>
+            <td> A </td>
+        </tr>
+    </table>
+
+    <br>
+    <!-- Demonstrating use of colspan -->
+    <table border="1">
+        <tr>
+            <th> Col 1 </th>
+            <th> Col 2 </th>
+            <th> Col 3 </th>
+        </tr>
+
+        <tr>
+            <td> Data 1 </td>
+            <td> Data 2 </td>
+            <td> Data 3 </td>
+        </tr>
+
+        <tr>
+            <td colspan="3"> Data 4 </td>
+        </tr>
+    </table>
+
+    <br>
+    <!-- Demonstrating use of row span -->
+    <table border="1">
+        <tr>
+            <th rowspan="2"> Merged Header </th>
+            <th> t1 </th>
+            <th> t2</th>
+        </tr>
+
+        <tr>
+            <td> Data 2 </td>
+            <td> Data 3 </td>
+        </tr>
+
+        <tr>
+            <td> Data 1 </td>
+            <td> Data 4 </td>
+            <td> Data 5 </td>
+        </tr>
+    </table>
+
+    <br>
+    <!-- Demonstrating rowspan and colspan -->
+
+    <table border>
+        <tr>
+            <th rowspan="2">ID</th>
+            <th rowspan="2">Name</th>
+            <th colspan="2">Details</th>
+        </tr>
+
+        <tr>
+            <th>Age</th>
+            <th>Grade</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>Alice</td>
+            <td rowspan="2">20</td>
+            <td>A</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Bob</td>
+            <td>B</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Charlie</td>
+            <td>22</td>
+            <td>C</td>
+        </tr>
+    </table>
+</body>
+
+</html>
