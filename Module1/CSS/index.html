@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- CSS can be defined in three ways,
+ External CSS
+ Internal CSS
+ Inline CSS
+
+ The CSS that is applied last will have the precedence. 
+ For example, if internal CSS is applied after external CSS, the styling in internal css is applied.
+ If external CSS is applied after internal css, styling in external css will be applied.
+ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Internal CSS -->
+    <style>
+        h2 {
+            color: red;
+            font-size: 20px;
+        }
+
+        input {
+            background-color: yellow;
+        }
+    </style>
+
+    <!-- To tie the external css to the HTML document -->
+    <!-- Since external CSS is applied after internal CSS, styling in external CSS will be applied. -->
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<!-- Since inline css is being applied after internal and external, styling from inline will be applied. -->
+
+<body>
+    <h2 style="color: blue;">Registration Form</h2>
+    <form> <!-- Generates a form -->
+        <div>
+            <label for="name">Name:</label>
+            <input id="name" name="myName" type="text" />
+        </div>
+        <br />
+        <div>
+            <label for="email">Email:</label>
+            <input id="email" name="myEmail" type="email" />
+        </div>
+
+        <br />
+        <div>
+            <label for="password">Password:</label>
+            <input id="password" name="myPassword" type="password" />
+        </div>
+
+        <br />
+        <div>
+            <label>Age:</label>
+            <input type="number" name="myAge" />
+            <!-- the value user enters as input is tied to the value of the "name" attribute provided. -->
+        </div>
+
+        <br />
+        <div>
+            <label>Gender</label>
+            <div>
+                <!-- The name property in combination with input type radio, allows the radio buttons to be grouped. Otherwise, all the three of them can be selected. 
+                 When user clicks the submit button, the value present in the "value" attribute of the selected button is taken. -->
+                <label>Male</label>
+                <input type="radio" name="gender" value="male" />
+
+                <label>Female</label>
+                <input type="radio" name="gender" value="female" />
+
+                <label>Other</label>
+                <input type="radio" name="gender" value="other" />
+            </div>
+        </div>
+
+        <br />
+        <div>
+            <label>Hobbies</label>
+            <div>
+                <!-- The name property allows the checkboxes to be grouped. Since the input type is checkbox, multiple options can be selected. 
+                 When user clicks the submit button, the value present in the "value" attribute of the selected button is taken. -->
+                <label>Reading</label>
+                <input type="checkbox" name="hobby" value="read" />
+
+                <label>Cooking</label>
+                <input type="checkbox" name="hobby" value="cook" />
+
+                <label>Driving</label>
+                <input type="checkbox" name="hobby" value="drive" />
+            </div>
+        </div>
+
+        <br />
+        <div>
+            <label for="birthday">Birthday</label>
+            <input id="birthday" name="myBirthday" type="date" />
+        </div>
+
+        <br />
+        <div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="myMessage"> </textarea> <!-- resizable text block -->
+        </div>
+
+        <br />
+        <div>
+            <label for="resume">Upload your resume</label>
+            <input type="file" id="resume" name="myResume" />
+        </div>
+
+
+        <br />
+        <div>
+            <input type="submit" value="Register">
+            <!-- special type of button. when user clicks this, it ties the value of "name" attribute to the user input value and sends it server or other place. -->
+        </div>
+    </form>
+</body>
+
+</html>
