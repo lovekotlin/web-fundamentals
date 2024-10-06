@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p {
+            border: 3px solid red;
+            width: 100px;
+            height: 100px; /* even with specified height and width it does't allow other elements to start on the same line. */
+        }
+
+        span {
+            border: 3px solid blue;
+            display: block; /* for span, the default value is inline. */
+        }
+    </style>
+</head>
+
+<body>
+    <p>I am para 1</p>
+    <p>I am para 2</p>
+
+    <span>I am Span 1</span>
+    <span>I am Span 2</span>
+</body>
+
+</html>
