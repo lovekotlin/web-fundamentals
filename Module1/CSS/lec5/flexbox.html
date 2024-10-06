@@ -11,25 +11,39 @@
             background-color: tomato;
             border: 2px solid black;
             height: 500px;
-
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* row is the default value */
+            justify-content: center; /* position elements across main axis */
+            align-items: flex-end; /* position elements across cross axis */
+            /* align-items: stretch; flex items are stretched to fill the containers cross axis */
+            /* align-items: baseline; flex items are aligned across their text baseline. */
+            flex-wrap: wrap; /* nowrap is the default value */
         }
 
         .box {
+            /* if height/width are not defined for the flex item, it will strectch to match the container height/width when align item is set to stretch */
             height: 100px;
-            width: 100px;
+            width: 130px;
             background-color: dodgerblue;
             margin: 10px;
+            padding: 10px;
+        }
+
+        .box2 {
+            font-size: 24px;
+        }
+
+        .box3 {
+            font-size: 42px;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="box">Box 1</div>
-        <div class="box">Box 2</div>
-        <div class="box">Box 3</div>
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
         <div class="box">Box 4</div>
     </div>
 
