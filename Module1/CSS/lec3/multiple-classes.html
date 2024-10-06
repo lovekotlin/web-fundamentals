@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .m1.m2 { /* Select an element with both classes. */
+            color: red;
+        }
+
+        .m1 { /* All elements which has m1 class will be applied this style. */
+            background-color: blue;
+        }
+
+        .m2 { /* All elements which has m2 class will be applied this style. */
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="m1 m2">Select me</div>
+    <div class="m1">Not me</div>
+    <div class="m2">Not me either</div>
+</body>
+</html>

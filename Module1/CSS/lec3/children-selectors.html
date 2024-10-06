@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .c1 > h1{ /* h1 is the direct child of class c1. */
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">
+        <h1>
+            <span>
+                I'm the direct son
+            </span>
+        </h1>
+    </div>
+
+    <div class="c1">
+        <span>
+            <h1> 
+                <span>
+                    I'm the idirect son
+                </span>
+            </h1>
+        </span>
+    </div>
+</body>
+</html>
