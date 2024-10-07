@@ -12,9 +12,9 @@
             border: 2px solid black;
             height: 500px;
             display: flex;
-            flex-direction: column; /* row is the default value */
+            flex-direction: row; /* row is the default value */
             justify-content: center; /* position elements across main axis */
-            align-items: flex-end; /* position elements across cross axis */
+            align-items: center; /* position elements across cross axis */
             /* align-items: stretch; flex items are stretched to fill the containers cross axis */
             /* align-items: baseline; flex items are aligned across their text baseline. */
             flex-wrap: wrap; /* nowrap is the default value */
@@ -22,19 +22,31 @@
 
         .box {
             /* if height/width are not defined for the flex item, it will strectch to match the container height/width when align item is set to stretch */
-            height: 100px;
-            width: 130px;
+            height: 200px;
+            width: 200px;
             background-color: dodgerblue;
             margin: 10px;
             padding: 10px;
         }
 
+        /* flex items will be arranged based on the value of order property in ascending order */
+        .box1 {
+            order: 3;
+        }
+
         .box2 {
             font-size: 24px;
+            order: 100;
         }
 
         .box3 {
             font-size: 42px;
+        }
+
+        /* flex-shrink is used when you want one flex item to shrink more than the others */
+        .box4 {
+            order: -1;
+            flex-shrink: 3; /* default value is 1. this will shrink 3 times more than the other flex items */
         }
     </style>
 </head>
@@ -44,7 +56,15 @@
         <div class="box box1">Box 1</div>
         <div class="box box2">Box 2</div>
         <div class="box box3">Box 3</div>
-        <div class="box">Box 4</div>
+        <div class="box box4">Box 4</div>
+        <div class="box box5">Box 5</div>
+        <div class="box box6">Box 6</div>
+        <div class="box box7">Box 7</div>
+        <div class="box box8">Box 8</div>
+        <div class="box box9">Box 9</div>
+        <div class="box box10">Box 10</div>
+        <div class="box box11">Box 11</div>
+        <div class="box box12">Box 12</div>
     </div>
 
 </body>
