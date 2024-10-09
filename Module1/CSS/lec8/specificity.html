@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            background-color: pink;
+        }
+
+        /* the last rule wins. even though background color pink was applied, since yellow was applied later, the background color will be yellow */
+        h1 {
+            background-color: yellow;
+        }
+
+        /* color red is applied even though green is applied later.
+        this is because of specificity. */
+        #fruits {
+            color: red;
+        }
+
+        .favorite {
+            color: green;
+        }
+
+        /* all four styles are being applied on the same element. they are conflicting with each other. now we have to calculate specificity score */
+        /* element selector */
+        div p {
+            /* [0,0,0,2] there are two element selectors */
+            color: blue;
+        }
+
+        /* id selector */
+        #main p {
+            /* [0,1,0,1] we have one id and one element selector */
+            color: red;
+        }
+
+        /* class selector */
+        .important p {
+            /* [0,0,1,1] we have one class and one element selector */
+            color: gray;
+        }
+
+        /* element selector */
+        p {
+            /* [0,0,0,1] we have one element selector */
+            color: brown;
+        }
+
+        /* 
+        0 0 0 2
+        0 1 0 1
+        0 0 1 1
+        0 0 0 1
+        a b c d
+
+        no winner in section a
+        b is the winner
+        0 1 0 1
+
+        */
+
+        #fruit {
+            color: red;
+        }
+
+        /* the element with favorites class changes to green in fruit list as the color red is inherited and is not directly applied */
+        .favorites {
+            color: green !important; /* [0,0,1,0] */
+        }
+
+        /* the color still is green. both .favorites and ui li are applied directly on the element. ui li has less specifity score */
+        ul li {
+            color: pink; /* [0,0,0,2] */
+        }
+
+        ul#fruit li.favorites {
+            color: blue; /* [0,1,1,2] */
+        }
+
+        ul#fruit li {
+            color: brown !important; /* [0,1,0,2] */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main" class="important">
+        <h1>hello</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, est alias vero voluptas corrupti suscipit
+            dignissimos fugiat. Ipsam laboriosam inventore dignissimos quibusdam cumque, delectus, unde libero dicta,
+            similique quisquam est!</p>
+    </div>
+
+    <ul>
+        <li>Apple</li>
+        <li id="fruits" class="favorite">Mango</li>
+        <li>Orange</li>
+    </ul>
+
+    <ul id="fruits">
+        <li>Eat</li>
+        <li>Sleep</li>
+        <li>Repeat</li>
+    </ul>
+
+    <ul id="fruit">
+        <li>Apple</li>
+        <li class="favorites">Mango</li>
+        <li>Orange</li>
+    </ul>
+</body>
+
+</html>
