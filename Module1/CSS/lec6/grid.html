@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-size: 20px;
+            line-height: 1.5;
+            color: dodgerblue;
+            background-color: tomato;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 100px auto;
+            padding: 10px;
+            display: grid;
+            /* grid-template-columns: 200px 300px 500px; using absolute units is not a good idea
+            grid-template-columns: 1fr 2fr 1fr; it will break the container into 4 frames internally. 1st column will be assigned 1 frame, second 2 frames, third 1 frame */
+            grid-template-columns: repeat(3, 1fr);
+            border: 2px solid black;
+            /* column-gap: 20px; to give space between two columns */
+            /* row-gap: 30px; to give space between two rows */
+            gap: 10px; /* to give space between to both rows and columns equally */
+            grid-template-rows: 1fr 3fr 1fr; /* similar to grid-template-columns */
+        }
+
+        /* width = 1200px
+        grid-template-columns: 1fr 2fr 1fr;
+        total frames = 1 + 2 + 1 = 4
+        size of each frame = 1200/4 = 300px
+        first column = 1fr = 1 * 300px = 300px
+        second column = 2fr = 2 * 300px = 600px
+        third column = 1fr = 1 * 300px = 300px
+        */
+
+        .item {
+            background-color: dodgerblue;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            border: 1px solid lightblue;
+        }
+
+        .item:nth-of-type(2) {
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+            align-self: center;
+            justify-self: center;
+            /*grid-row:1/3; the item goes from row line number 1 to row line number 3 */
+            grid-column:1/5; /* similar to grid-row */
+        }
+
+        .item:nth-of-type(1) {
+            grid-column: span 2; /* item will span 2 columns */
+        }
+
+        .item:nth-of-type(8) {
+            grid-column: span 3; /* item will span 3 columns */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+        <div class="item">Item 6</div>
+        <div class="item">Item 7</div>
+        <div class="item">Item 8</div>
+        <div class="item">Item 9</div>
+    </div>
+</body>
+
+</html>
