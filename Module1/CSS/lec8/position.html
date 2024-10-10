@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <style>
+        body {
+            border: 3px solid red;
+            height: 2000px;
+        }
+
         .normal-flow {
-            position: static; /* position is placement of an element within its container */
-            top: 20px; /* no effect on the element */
+            position: static;
+            /* position is placement of an element within its container */
+            top: 20px;
+            /* no effect on the element */
             right: 30px;
         }
 
         .bookshelf {
             position: relative;
-            width:300px;
-            height:200px;
+            width: 500px;
+            height: 500px;
             border: 1px solid rebeccapurple;
+            margin: 100px auto;
         }
 
         .book {
-            width:50px;
-            height:100px;
+            width: 50px;
+            height: 100px;
             color: black;
             background-color: aqua;
             text-align: center;
@@ -39,11 +48,35 @@
             bottom: 0px;
             right: 0px;
         }
+
+        .book4 {
+            position: fixed;
+            top: 100px;
+            right: 50px
+        }
+
+        .book5 {
+            position: sticky;
+            top: 0px;
+        }
+
+        .navbar {
+            height: 200px;
+            width: 100vw;
+            background-color: black;
+            position: sticky;
+            top: 0px;
+        }
     </style>
 </head>
+
 <body>
     <div class="normal-flow">
         I am a normal flow
+    </div>
+
+    <div class="navbar">
+        Navbar
     </div>
 
     <div class="bookshelf"> <!-- bookshelf is the first ancestor of book 3. but has no position property -->
@@ -54,4 +87,5 @@
         <div class="book book5">Book 5</div>
     </div>
 </body>
+
 </html>
